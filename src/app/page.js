@@ -309,7 +309,16 @@ const projects = [
           </div>
 
         </div>
+        
       </footer>
+
+      <a
+        href="https://wa.me/918989171095"
+        target="_blank"
+        className="fixed bottom-6 right-6 bg-black text-white px-5 py-4 rounded-full shadow-lg z-50 hover:scale-105 transition duration-300"
+      >
+        WhatsApp
+      </a>
 
     </div>
   );

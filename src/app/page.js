@@ -1,26 +1,84 @@
 export default function HomePage() {
-  const projects = [
-    {
-      title: "Coal Trading Business Management System",
-      description:
-        "A custom web application developed for an import coal trading business to manage orders, dispatch operations, reports, customer activities, and operational workflows.",
-    },
-    {
-      title: "Incentive Calculation & Booking Reporting System",
-      description:
-        "A custom operational reporting and incentive calculation system developed for a Maruti dealership.",
-    },
-    {
-      title: "Form Issue & Reporting Automation System",
-      description:
-        "A Google Sheets and Apps Script automation system for form issuance, reporting, and workflow management.",
-    },
-    {
-      title: "Home Complaint Management PWA",
-      description:
-        "A Progressive Web App built using Google Sheets and Apps Script backend for complaint tracking and status management.",
-    },
-  ];
+const projects = [
+  {
+    title: "Coal Trading Business Management System",
+    image: "/projects/coal-trading.jpg",
+    problem:
+      "Managing coal orders, dispatch tracking, CRM activities, and operational reports manually across multiple Excel sheets and calls.",
+
+    solution:
+      "Developed a centralized web application for order management, dispatch tracking, reporting, customer coordination, and operational workflows.",
+
+    outcome:
+      "Improved operational visibility, reduced manual coordination, and centralized reporting workflows.",
+
+    benefits: [
+      "Centralized business visibility",
+      "Faster operational decision-making",
+      "Reduced Excel dependency",
+    ],
+  },
+
+  {
+    title: "Incentive Calculation & Booking Reporting System",
+    image: "/projects/incentive-system.jpg",
+
+    problem:
+      "Manual dealership incentive calculations and booking reports created delays and reporting inconsistencies.",
+
+    solution:
+      "Built an operational reporting and incentive calculation system for dealership staff and booking workflow management.",
+
+    outcome:
+      "Reduced manual calculations, improved reporting accuracy, and simplified review processes.",
+
+    benefits: [
+      "Automated calculations",
+      "Improved reporting accuracy",
+      "Operational workflow simplification",
+    ],
+  },
+
+  {
+    title: "Form Issue & Reporting Automation System",
+    image: "/projects/form-automation.jpg",
+
+    problem:
+      "Form issuance and reporting processes depended heavily on repetitive manual entries and paperwork.",
+
+    solution:
+      "Created a Google Sheets and Apps Script based workflow automation system for tracking, reporting, and PDF generation.",
+
+    outcome:
+      "Reduced repetitive data entry and improved reporting efficiency.",
+
+    benefits: [
+      "Reduced manual paperwork",
+      "Automated PDF generation",
+      "Improved workflow tracking",
+    ],
+  },
+
+  {
+    title: "Home Complaint Management PWA",
+    image: "/projects/complaint-pwa.jpg",
+
+    problem:
+      "Complaint tracking lacked centralized digital visibility and mobile-friendly status management.",
+
+    solution:
+      "Built a lightweight PWA using Google Sheets and Apps Script backend for complaint registration and tracking.",
+
+    outcome:
+      "Improved complaint visibility and enabled mobile-friendly complaint handling.",
+
+    benefits: [
+      "Centralized complaint tracking",
+      "Faster issue handling",
+      "Mobile-first workflow",
+    ],
+  },
+];
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
@@ -128,10 +186,12 @@ export default function HomePage() {
                 className="border border-gray-200 rounded-3xl overflow-hidden hover:shadow-lg transition"
               >
 
-                <div className="aspect-video bg-gray-100 flex items-center justify-center">
-                  <span className="text-gray-400 text-sm">
-                    Project Screenshot
-                  </span>
+                <div className="aspect-video overflow-hidden border-b border-gray-200">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover hover:scale-105 transition duration-500"
+                  />
                 </div>
 
                 <div className="p-8">
@@ -143,12 +203,27 @@ export default function HomePage() {
                     {project.title}
                   </h3>
 
-                  <p className="mt-4 text-gray-600 leading-relaxed">
-                    {project.description}
-                  </p>
+                  <div className="mt-4 space-y-4 text-gray-600 leading-relaxed">
+
+                    <div>
+                      <span className="font-semibold text-black">Problem:</span>{" "}
+                      {project.problem}
+                    </div>
+
+                    <div>
+                      <span className="font-semibold text-black">Solution:</span>{" "}
+                      {project.solution}
+                    </div>
+
+                    <div>
+                      <span className="font-semibold text-black">Business Outcome:</span>{" "}
+                      {project.outcome}
+                    </div>
+
+                  </div>
 
                   <button className="mt-6 border border-black px-5 py-3 rounded-2xl hover:bg-black hover:text-white transition">
-                    View Details
+                    View Case Study
                   </button>
                 </div>
 

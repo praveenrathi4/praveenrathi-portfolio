@@ -262,6 +262,93 @@ const projects = [
         </div>
       </section>
 
+            {/* How I Work */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
+
+          <div className="max-w-3xl mb-14">
+            <div className="text-sm uppercase tracking-wider text-gray-500 mb-4">
+              Process
+            </div>
+
+            <h2 className="text-3xl lg:text-5xl font-bold leading-tight">
+              How I Work With Businesses
+            </h2>
+
+            <p className="mt-6 text-lg text-gray-600 leading-relaxed">
+              My approach focuses on understanding existing workflows first,
+              then building practical automation systems that reduce repetitive
+              work and improve operational visibility.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div className="border border-gray-200 rounded-3xl p-8 hover:shadow-lg transition">
+              <div className="text-5xl font-bold text-gray-200 mb-6">
+                01
+              </div>
+
+              <h3 className="text-xl font-bold mb-4">
+                Understand Workflow
+              </h3>
+
+              <p className="text-gray-600 leading-relaxed">
+                Analyze current operational processes, reporting methods,
+                and repetitive manual activities.
+              </p>
+            </div>
+
+            <div className="border border-gray-200 rounded-3xl p-8 hover:shadow-lg transition">
+              <div className="text-5xl font-bold text-gray-200 mb-6">
+                02
+              </div>
+
+              <h3 className="text-xl font-bold mb-4">
+                Identify Automation Areas
+              </h3>
+
+              <p className="text-gray-600 leading-relaxed">
+                Find opportunities to reduce manual work, improve visibility,
+                and simplify operational workflows.
+              </p>
+            </div>
+
+            <div className="border border-gray-200 rounded-3xl p-8 hover:shadow-lg transition">
+              <div className="text-5xl font-bold text-gray-200 mb-6">
+                03
+              </div>
+
+              <h3 className="text-xl font-bold mb-4">
+                Build Practical Solution
+              </h3>
+
+              <p className="text-gray-600 leading-relaxed">
+                Develop lightweight, business-friendly systems focused on
+                usability and operational efficiency.
+              </p>
+            </div>
+
+            <div className="border border-gray-200 rounded-3xl p-8 hover:shadow-lg transition">
+              <div className="text-5xl font-bold text-gray-200 mb-6">
+                04
+              </div>
+
+              <h3 className="text-xl font-bold mb-4">
+                Improve Continuously
+              </h3>
+
+              <p className="text-gray-600 leading-relaxed">
+                Refine workflows and improve systems based on actual business
+                usage and operational feedback.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
       {/* Contact */}
       <section id="contact" className="py-20">
         <div className="max-w-5xl mx-auto px-6 text-center">

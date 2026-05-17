@@ -2,6 +2,19 @@ const projects = {
   "coal-trading-system": {
     title: "Coal Trading Business Management System",
     image: "/projects/coal-trading.jpg",
+    gallery: [
+    "/projects/coal/1.jpg",
+    "/projects/coal/2.jpg",
+    "/projects/coal/3.jpg",
+    "/projects/coal/4.jpg",
+    "/projects/coal/5.jpg",
+    "/projects/coal/6.jpg",
+    "/projects/coal/7.jpg",
+    "/projects/coal/8.jpg",
+    "/projects/coal/9.jpg",
+    "/projects/coal/10.jpg",
+    "/projects/coal/11.jpg",
+    ],
 
     problem:
       "Managing orders, dispatches, CRM activities, and operational reports manually created delays and reduced operational visibility.",
@@ -25,6 +38,12 @@ const projects = {
   "incentive-reporting-system": {
     title: "Incentive Calculation & Booking Reporting System",
     image: "/projects/incentive-system.jpg",
+    gallery: [
+    "/projects/incentive/1.jpg",
+    "/projects/incentive/2.jpg",
+    "/projects/incentive/3.jpg",
+    "/projects/incentive/4.jpg",
+    ],
 
     problem:
       "Manual incentive calculations and booking reports caused reporting delays and inconsistencies.",
@@ -46,6 +65,9 @@ const projects = {
   "form-issue-automation": {
     title: "Form Issue & Reporting Automation System",
     image: "/projects/form-automation.jpg",
+    gallery: [
+    "/projects/form/1.jpg",
+    ],
 
     problem:
       "Form issuance and reporting workflows were repetitive and manually intensive.",
@@ -67,6 +89,12 @@ const projects = {
   "home-complaint-pwa": {
     title: "Home Complaint Management PWA",
     image: "/projects/complaint-pwa.jpg",
+    gallery: [
+    "/projects/complaint/1.jpg",
+    "/projects/complaint/2.jpg",
+    "/projects/complaint/3.jpg",
+    "/projects/complaint/4.jpg",
+    ],
 
     problem:
       "Complaint tracking lacked centralized visibility and mobile-friendly management.",
@@ -118,19 +146,38 @@ export default async function ProjectPage({ params }) {
         </div>
       </section>
 
-      <section className="py-16">
+        <section className="pb-12">
         <div className="max-w-6xl mx-auto px-6">
 
-          <div className="rounded-3xl overflow-hidden border border-gray-200">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full"
-            />
-          </div>
+            <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl font-bold">
+                Project Screenshots
+            </h2>
+
+            <div className="text-sm text-gray-500">
+                Scroll →
+            </div>
+            </div>
+
+            <div className="flex gap-5 overflow-x-auto pb-2">
+
+            {project.gallery.map((image, index) => (
+                <div
+                key={index}
+                className="min-w-[320px] h-[220px] rounded-2xl overflow-hidden border border-gray-200 bg-white hover:shadow-lg transition flex-shrink-0"
+                >
+                <img
+                    src={image}
+                    alt={`Screenshot ${index + 1}`}
+                    className="w-full h-full object-contain bg-gray-50 p-2 hover:scale-[1.02] transition duration-500"
+                />
+                </div>
+            ))}
+
+            </div>
 
         </div>
-      </section>
+        </section>
 
       <section className="pb-20">
         <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-3 gap-10">

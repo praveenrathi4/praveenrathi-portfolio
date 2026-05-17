@@ -1,6 +1,7 @@
 export default function HomePage() {
 const projects = [
   {
+    slug: "coal-trading-system",
     title: "Coal Trading Business Management System",
     image: "/projects/coal-trading.jpg",
     problem:
@@ -20,6 +21,7 @@ const projects = [
   },
 
   {
+    slug: "incentive-reporting-system",
     title: "Incentive Calculation & Booking Reporting System",
     image: "/projects/incentive-system.jpg",
 
@@ -40,6 +42,7 @@ const projects = [
   },
 
   {
+    slug: "form-issue-automation",
     title: "Form Issue & Reporting Automation System",
     image: "/projects/form-automation.jpg",
 
@@ -60,6 +63,7 @@ const projects = [
   },
 
   {
+    slug: "home-complaint-pwa",
     title: "Home Complaint Management PWA",
     image: "/projects/complaint-pwa.jpg",
 
@@ -222,9 +226,12 @@ const projects = [
 
                   </div>
 
-                  <button className="mt-6 border border-black px-5 py-3 rounded-2xl hover:bg-black hover:text-white transition">
+                  <a
+                    href={`/projects/${project.slug}`}
+                    className="inline-block mt-8 border border-black px-5 py-3 rounded-2xl font-medium hover:bg-black hover:text-white transition"
+                  >
                     View Case Study
-                  </button>
+                  </a>
                 </div>
 
               </div>

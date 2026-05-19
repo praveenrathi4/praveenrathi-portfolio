@@ -1,10 +1,12 @@
+import { getSiteUrl } from "@/lib/config";
+
 export const site = {
   name: "Praveen Rathi",
   title: "Chartered Accountant · Business Automation",
   tagline: "Custom software for growing businesses worldwide",
   description:
     "Chartered Accountant turned automation consultant. I help small and medium businesses replace manual spreadsheets and disconnected workflows with practical systems—MIS dashboards, custom web apps, and Google Workspace tools—grounded in real finance and operations experience.",
-  url: "https://praveenrathi-portfolio.vercel.app",
+  url: getSiteUrl(),
   email: "rathipra@gmail.com",
   phone: "+91 8989171095",
   whatsapp: "https://wa.me/918989171095",

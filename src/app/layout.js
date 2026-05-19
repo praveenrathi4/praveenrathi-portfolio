@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { site } from "@/data/site";
+import { getSiteUrl } from "@/lib/config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,8 +13,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0f766e",
+};
+
 export const metadata = {
-  metadataBase: new URL(site.url),
+  metadataBase: new URL(getSiteUrl()),
   title: {
     default: `${site.name} | Business Automation for SMEs Worldwide`,
     template: `%s | ${site.name}`,
@@ -47,6 +54,12 @@ export const metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: "/favicon.svg",
   },
 };
 

@@ -6,6 +6,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import ProjectImage from "@/components/ProjectImage";
 import { projects, getProjectBySlug, getAllProjectSlugs } from "@/data/projects";
 import { site } from "@/data/site";
+import { getSiteUrl } from "@/lib/config";
 
 export async function generateStaticParams() {
   return getAllProjectSlugs().map((slug) => ({ slug }));
@@ -19,9 +20,13 @@ export async function generateMetadata({ params }) {
   return {
     title: project.title,
     description: project.solution,
+    alternates: {
+      canonical: `/projects/${slug}`,
+    },
     openGraph: {
       title: project.title,
       description: project.outcome,
+      url: `${getSiteUrl()}/projects/${slug}`,
     },
   };
 }

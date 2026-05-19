@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Praveen Rathi — Portfolio
 
-## Getting Started
+Business automation portfolio for **Praveen Rathi** (Chartered Accountant · SME software consultant). Built with Next.js 16, React 19, and Tailwind CSS v4.
 
-First, run the development server:
+## Features
+
+- Single-page marketing site with project case studies
+- Experience timeline (CA → corporate MIS → custom systems)
+- SEO: sitemap, robots.txt, Open Graph, JSON-LD
+- Static generation for all project pages
+- Mobile navigation and WhatsApp contact
+
+## Requirements
+
+- Node.js **18.18+** (see `engines` in `package.json`)
+
+## Local development
 
 ```bash
+npm install
+cp .env.example .env.local   # optional: set your production URL
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Production build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+npm run start
+```
 
-## Learn More
+## Environment variables
 
-To learn more about Next.js, take a look at the following resources:
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `NEXT_PUBLIC_SITE_URL` | Recommended | Canonical URL (no trailing slash), e.g. `https://your-domain.com` |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Set this in **Vercel → Project → Settings → Environment Variables** for production so sitemap, Open Graph, and canonical URLs are correct.
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push this repo to GitHub.
+2. Import the project in [Vercel](https://vercel.com/new).
+3. Add `NEXT_PUBLIC_SITE_URL` with your live domain.
+4. Deploy (framework preset: **Next.js**).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project images
+
+Add screenshots under `public/projects/` (paths are defined in `src/data/projects.js`). If files are missing, the UI shows gradient placeholders automatically.
+
+## Content updates
+
+| What to change | File |
+|----------------|------|
+| Contact, nav, services, FAQ | `src/data/site.js` |
+| Career timeline | `src/data/experience.js` |
+| Projects & case studies | `src/data/projects.js` |
+
+## License
+
+Private portfolio — all rights reserved.

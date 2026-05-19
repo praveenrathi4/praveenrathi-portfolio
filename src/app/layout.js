@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { site } from "@/data/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,42 +13,57 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Praveen Rathi | SME Automation Solutions",
-
-  description:
-    "Custom business automation systems, workflow tools, operational dashboards, Google Apps Script solutions, and reporting software for small and medium businesses.",
-
+  metadataBase: new URL(site.url),
+  title: {
+    default: `${site.name} | Business Automation for SMEs Worldwide`,
+    template: `%s | ${site.name}`,
+  },
+  description: site.description,
   keywords: [
-    "Business Automation",
-    "Workflow Automation",
+    "business automation",
+    "SME software",
+    "workflow automation",
+    "custom business applications",
+    "reporting dashboards",
     "Google Apps Script",
-    "MIS Dashboard",
-    "Operational Software",
-    "SME Automation",
-    "Custom Business Software",
-    "Reporting Systems",
-    "Business Web Applications",
-    "Process Automation",
+    "small business software",
+    "remote software consultant",
   ],
-
-  authors: [{ name: "Praveen Rathi" }],
-
-  creator: "Praveen Rathi",
-
+  authors: [{ name: site.name }],
+  creator: site.name,
   openGraph: {
-    title: "Praveen Rathi | SME Automation Solutions",
-
-    description:
-      "Custom operational software and workflow automation solutions for SMEs.",
-
-    url: "https://praveenrathi-portfolio.vercel.app",
-
-    siteName: "Praveen Rathi Portfolio",
-
+    title: `${site.name} | Business Automation for SMEs`,
+    description: site.description,
+    url: site.url,
+    siteName: `${site.name} Portfolio`,
     locale: "en_US",
-
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} | Business Automation for SMEs`,
+    description: site.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: site.name,
+  description: site.description,
+  url: site.url,
+  email: site.email,
+  telephone: site.phone,
+  areaServed: "Worldwide",
+  serviceType: [
+    "Business Process Automation",
+    "Custom Software Development",
+    "Reporting Systems",
+  ],
 };
 
 export default function RootLayout({ children }) {
@@ -56,7 +72,13 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full bg-slate-50 font-sans text-slate-900">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
